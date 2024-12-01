@@ -1,0 +1,179 @@
+/* Contenedor para centrar el cuadro */
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+
+.box2 {
+    width: 40vmin;
+    height: 30vmin;
+    display: grid;
+    place-content: center;
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    color: white;
+    text-shadow: 0 1px 0 #000;
+
+    /* Propiedades para el borde animado */
+    --border-angle: 0turn; /* Para la animación */
+    --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+    );
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    background: 
+        var(--main-bg) padding-box, /* clip para el fondo interno */
+        var(--gradient-border) border-box, /* clip para el borde con gradiente */
+        var(--main-bg) border-box; /* Relleno detrás del borde */
+
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+}
+
+/* Animación de rotación del gradiente */
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+/* Detener la animación en hover */
+.box2:hover {
+    animation-play-state: paused;
+}
+
+/* Declaración de propiedad para soporte experimental */
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+
+
+.diseño {
+    font-size: 1000%;
+    padding: 20px;
+    position: relative;
+    left: 45%; /* Mueve el elemento 30% hacia la derecha */
+  }
+  
+  .dise {
+    font-size: 30px;
+    float: right; /* Alinea el texto a la derecha */
+    word-wrap: break-word;
+    white-space: normal;
+    width: 60%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+  
+  .container3 {
+    position: relative; /* Mantiene los círculos dentro del contenedor */
+    margin-top: 10rem; /* Espacio para que los círculos queden debajo */
+    height: auto; /* Permite que el contenedor se ajuste al contenido */
+    display: flex;
+    justify-content: center; /* Centra los círculos horizontalmente */
+    align-items: center; /* Centra los círculos verticalmente */
+    overflow: visible; /* Asegura que nada quede oculto */
+    transform: translateX(0); /* Asegura que el contenedor esté centrado horizontalmente */
+  }
+  
+  /* Animación y estilo de los círculos */
+  .circle {
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin); /* Tamaño dinámico según el índice */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 255, 13);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i) * 0.08s) infinite;
+    box-shadow: 0 15px rgb(124, 124, 124), inset 0 15px rgb(124, 124, 124);
+  }
+  
+  @keyframes animate {
+    0%, 100% {
+      transform: rotateX(70deg) translateZ(50px) translateY(0);
+      filter: hue-rotate(0);
+    }
+    50% {
+      transform: rotateX(70deg) translateZ(50px) translateY(-50vmin); /* Movimiento hacia arriba durante la animación */
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+
+.invisible{
+    font-size: 15px;
+    float: right; /* Alinea el texto a la derecha */
+    word-wrap: break-word;
+    white-space: normal;
+    width: 60%;
+    max-width: 100%;
+    color: black;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+/* Para el contenedor general */
+.contenido {
+  display: flex;  /* Usamos flexbox para alinear imagen y texto en fila */
+  justify-content: flex-start;  /* Alinea los elementos desde el inicio */
+  align-items: flex-start;  /* Alinea los elementos al principio (arriba) */
+  margin-bottom: 20px;  /* Da un margen debajo del contenedor */
+}
+
+/* Estilo del texto */
+.texto {
+ padding: 59px;
+  width: 55%;  /* Deja espacio para el texto */
+  text-align: justify;  /* Justifica el texto */
+  margin-right: 20px;  /* Un margen a la derecha para separar el texto de la imagen */
+}
+
+/* Estilo para los títulos */
+.c {
+  font-size: 38px;
+}
+
+/* Estilo para los párrafos */
+.co {
+  font-size: 30px;
+}
+
+/* Estilo de la imagen */
+.imagen {
+  width: 40%;  /* Define el ancho de la imagen */
+  height: auto;  /* Mantiene la proporción de la imagen */
+  object-fit: cover;  /* Hace que la imagen cubra el área sin deformarse */
+  order: 2;  /* Esto mueve la imagen al final, es decir, a la derecha */
+}
+
+/* El texto se mueve a la izquierda */
+.texto {
+  order: 1;  /* Esto mantiene el texto a la izquierda */
+}
