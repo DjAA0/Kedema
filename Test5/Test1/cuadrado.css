@@ -1,0 +1,110 @@
+/* Estilo para la animación de los cubos */
+@keyframes animate7 {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  /* Contenedor principal */
+  .main-container7 {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos: texto a la izquierda y cubos a la derecha */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Los elementos pueden saltar a la siguiente línea si el espacio es pequeño */
+    padding: 20px;
+  }
+  
+  /* Estilo para el título */
+  #gestion-configuracion {
+    text-align: left;
+    font-size: 2.5em;
+    margin: 0;
+    padding-left: 20px; /* Alineación del título a la izquierda */
+  }
+  
+  /* Estilo para el texto */
+  .text7 {
+    flex: 1;
+    max-width: 45%; /* Texto ocupando una porción del espacio */
+    font-size: 1.5em;
+    line-height: 1.6;
+    padding-right: 20px; /* Espacio entre el texto y los cubos */
+  }
+  
+  /* Contenedor de los cubos */
+  .container7 {
+    position: relative;
+    top: 0;
+    transform: skewY(-20deg);
+    animation: animate7 5s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 45%; /* Contenedor de los cubos toma la mitad del espacio */
+  }
+  
+  /* Estilo de cada cubo */
+  .cube7 {
+    position: relative;
+    z-index: 2;
+    width: 200px; /* Tamaño más grande para cada cubo */
+    height: 200px;
+    margin: 15px;
+  }
+  
+  .cube7 div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translate(calc(-70px * var(--x)), calc(-60px * var(--y)));
+  }
+  
+  /* Estilo para los cubos */
+  .cube7 span {
+    position: relative;
+    display: inline-block;
+    width: 100px; /* Aumento el tamaño del cubo */
+    height: 100px; /* Aumento el tamaño del cubo */
+    background: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1s; /* Transición más rápida */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadido para efectos visuales */
+  }
+  
+  .cube7 span:hover {
+    background: #ef4149;
+    filter: drop-shadow(0 0 30px #ef4149);
+    transition: 0s;
+  }
+  
+  /* Cambio en el pseudo-elemento antes */
+  .cube7 span:before {
+    content: "";
+    position: absolute;
+    left: -20px; /* Cambié la distancia para evitar choques */
+    width: 20px; /* Ajusté el tamaño */
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 1s;
+  }
+  
+  /* Cambio en el pseudo-elemento después */
+  .cube7 span:after {
+    content: "";
+    position: absolute;
+    top: -20px; /* Cambié la distancia para evitar choques */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Ajusté el tamaño */
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1s;
+  }
+  

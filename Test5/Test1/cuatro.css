@@ -1,0 +1,64 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
+    gap: 25px; /* Espacio entre las tarjetas */
+    align-items: center; /* Centrar las tarjetas verticalmente */
+    justify-content: center; /* Centrar las tarjetas horizontalmente */
+    height: 50%; /* Establecer altura completa de la ventana */
+    width: 100%; /* Establecer ancho completo de la ventana */
+}
+
+.cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 270px; /* Ajusta la altura de las tarjetas */
+    width: 100%; /* Ancho al 100% del contenedor */
+    border-radius: 55px; /* Cambio en el radio de bordes */
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    flex: 1 1 45%; /* Esto hace que cada tarjeta ocupe el 45% del contenedor */
+    max-width: 45%; /* Limita el ancho máximo al 45% */
+    margin-top: 0; /* Elimina el espacio superior */
+}
+
+.cards .card:nth-child(n+3) {
+    margin-top: 0 !important; /* Elimina el margen superior en las tarjetas que están en la segunda fila */
+}
+
+.cards .red {
+    background-color: #f43f5e;
+}
+
+.cards .blue {
+    background-color: #3b82f6;
+}
+
+.cards .green {
+    background-color: #22c55e;
+}
+
+.cards .yellow {
+    background-color: #f59e0b;
+}
+
+.cards .card p.tip {
+    font-size: 7.1em; /* Aumento del tamaño de fuente */
+    font-weight: 700;
+}
+
+.cards .card p.second-text {
+    font-size: 3.2em; /* Aumento del tamaño de fuente */
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
