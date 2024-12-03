@@ -1,0 +1,91 @@
+/* Contenedor principal */
+.container5 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Sección para cada grupo de requisitos */
+.section10 {
+    width: 48%;
+}
+
+/* Estilo para los encabezados h4 */
+.h4texto {
+    margin-bottom: 10px;
+    font-size: 38px;  /* Tamaño de texto aumentado */
+    text-align: center;  /* Centrar el texto */
+}
+
+/* Estilo para los párrafos */
+.ptexto {
+    margin-bottom: 10px;
+    font-size: 30px;  /* Tamaño de texto aumentado */
+    text-align: justify;  /* Justificar texto */
+}
+
+/* Listas de requisitos */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 25px;  /* Tamaño de texto aumentado */
+    text-align: justify;  /* Justificar texto */
+}
+
+.eje{
+    font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animación de la tarjeta con gradiente */
+.feature {
+  padding: 20px;
+  margin-top: 30px;
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.fotopara3 {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: all 0.3s ease; /* Transición para la imagen */
+}
+
+/* Animación para la caja de texto y la imagen */
+.feature:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30); /* Sombra en hover */
+  transform: scale(1.05); /* Aumentar tamaño al pasar el ratón */
+}
+
+/* Animación de hover para las imágenes */
+.fotopara3:hover {
+  transform: scale(1.1); /* Aumentar tamaño de la imagen */
+}
+
+/* Estilo de los títulos y descripciones */
+.mitad33 {
+  font-size: 35px;
+}
+
+.mitad333 {
+  font-size: 21px;
+}
